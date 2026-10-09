@@ -4,23 +4,11 @@
   const FILES = {
     'README.md': `# Team docs
 
-Plain Markdown, so it survives the next three tool migrations. Start with the [postmortem](postmortem.md).
+Plain Markdown, so it survives the next three tool migrations. Start with the [incident report](incident-report.md).
 `,
-    'lessons.md': `# What we learned
+    'incident-report.md': `# Incident report: Friday, 16:58
 
-Back to the [postmortem](postmortem.md).
-
-- [x] Friday is a state of mind, not a deploy window
-- [ ] Read the diff before writing "LGTM"
-- [ ] Rename \`final.md\`, \`final-2.md\` and \`final-final.md\`
-
-\`\`\`bash
-git log --since="friday 16:00"   # the evidence
-\`\`\`
-`,
-    'postmortem.md': `# Postmortem: Friday, 16:58
-
-**What happened:** a one-line change went out without review. It was three hundred lines. What we took away is in [What we learned](lessons.md).
+**What happened:** a one-line change went out without review. It was three hundred lines. What we took away is in the [retrospective](retro.md).
 
 > [!TIP]
 > Press **Ctrl+E**, or double-click any text, to edit this before anyone else reads it. The file stays plain Markdown.
@@ -39,6 +27,18 @@ git log --since="friday 16:00"   # the evidence
 | 17:03 | Everything is on fire |
 | 17:45 | Revert, apology, pizza |
 `,
+    'retro.md': `# Retrospective: what we learned
+
+Back to the [incident report](incident-report.md).
+
+- [x] Friday is a state of mind, not a deploy window
+- [ ] Read the diff before writing "LGTM"
+- [ ] Rename \`final.md\`, \`final-2.md\` and \`final-final.md\`
+
+\`\`\`bash
+git log --since="friday 16:00"   # the evidence
+\`\`\`
+`,
   };
 
   // ?bare shows only Margin's editor, without the VS Code window around it (the home page uses this).
@@ -51,7 +51,7 @@ git log --since="friday 16:00"   # the evidence
   setTheme(pick());
   addEventListener('message', (e) => { if (e.data && e.data.type === 'zl-theme') setTheme(e.data.theme); });
 
-  let current = 'postmortem.md';
+  let current = 'incident-report.md';
   let version = 1;
   const back = [], forward = [];
   const send = (m) => window.postMessage(m, '*');
