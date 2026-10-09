@@ -1,22 +1,25 @@
-/* ZoomieLoaf: values taken from the R2 design reference. */
+/* ZoomieLoaf: layout from the R2 design reference; Geist type and a cool, GitHub-like palette. */
+
+@font-face { font-family:"Geist"; font-weight:100 900; font-display:swap; src:url("fonts/geist.woff2") format("woff2"); }
+@font-face { font-family:"Geist Mono"; font-weight:100 900; font-display:swap; src:url("fonts/geist-mono.woff2") format("woff2"); }
 
 :root {
-  --bg:#F7F6F3; --fg:#171615; --mut:#5E5B55; --line:#E3E0DA; --line2:#CCC8C0;
-  --panel:#FFFFFF; --soft:#F0EEE9; --sel:#DDD9D0; --dust:#A3A098; --inv:#171615; --invfg:#F7F6F3;
+  --bg:#FFFFFF; --fg:#1F2328; --mut:#59636E; --line:#E1E4E8; --line2:#D1D9E0;
+  --panel:#FFFFFF; --soft:#F6F8FA; --sel:#DDF4FF; --dust:#AEB6BF; --inv:#1F2328; --invfg:#FFFFFF;
   --accent:#005FB8; --accent-fg:#FFFFFF; --accent-soft:#DDEBFB; --link:#005FB8;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark) {
   :root:not([data-theme="light"]) {
-    --bg:#131211; --fg:#ECEAE6; --mut:#A3A099; --line:#292725; --line2:#3B3835;
-    --panel:#1A1917; --soft:#1F1D1B; --sel:#3D3A36; --dust:#6A675F; --inv:#ECEAE6; --invfg:#1A1917;
+    --bg:#0D1117; --fg:#E6EDF3; --mut:#9198A1; --line:#21262D; --line2:#30363D;
+    --panel:#161B22; --soft:#161B22; --sel:#1F3A5F; --dust:#484F58; --inv:#E6EDF3; --invfg:#0D1117;
     --accent:#0078D4; --accent-fg:#FFFFFF; --accent-soft:#1B2A40; --link:#4DAAFC;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg:#131211; --fg:#ECEAE6; --mut:#A3A099; --line:#292725; --line2:#3B3835;
-  --panel:#1A1917; --soft:#1F1D1B; --sel:#3D3A36; --dust:#6A675F; --inv:#ECEAE6; --invfg:#1A1917;
+  --bg:#0D1117; --fg:#E6EDF3; --mut:#9198A1; --line:#21262D; --line2:#30363D;
+  --panel:#161B22; --soft:#161B22; --sel:#1F3A5F; --dust:#484F58; --inv:#E6EDF3; --invfg:#0D1117;
     --accent:#0078D4; --accent-fg:#FFFFFF; --accent-soft:#1B2A40; --link:#4DAAFC;
   color-scheme:dark;
 }
@@ -25,7 +28,7 @@ html { overflow-x:clip; background:var(--bg); }
 body {
   margin:0; container:zl / inline-size; overflow-x:clip;
   background:var(--bg); color:var(--fg);
-  font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  font:16px/1.6 "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   -webkit-font-smoothing:antialiased;
 }
 a { color:inherit; text-decoration-thickness:1px; text-underline-offset:3px; }
@@ -34,7 +37,7 @@ a:hover { text-decoration-thickness:2px; }
 h1, h2, h3, p, dl, dd, ol, ul, figure { margin:0; }
 h1, h2 { text-wrap:balance; }
 p { text-wrap:pretty; }
-code, .mono { font-family:ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace; }
+code, .mono, kbd { font-family:"Geist Mono", ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace; }
 .mut { color:var(--mut); }
 .wrap { max-width:1040px; margin:0 auto; padding-left:24px; padding-right:24px; box-sizing:border-box; }
 
@@ -149,7 +152,7 @@ code, .mono { font-family:ui-monospace, "SF Mono", "Cascadia Code", Menlo, Conso
 .steps { list-style:none; padding:0; display:flex; flex-direction:column; gap:14px; counter-reset:step; }
 .steps li { display:grid; grid-template-columns:28px minmax(0,1fr); gap:10px; counter-increment:step; }
 .steps li::before { content:counter(step); display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border:1px solid var(--line2); border-radius:50%; font-size:13px; color:var(--mut); }
-kbd { font:12.5px ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace; border:1px solid var(--line2); border-bottom-width:2px; border-radius:5px; padding:1px 6px; background:var(--panel); }
+kbd { font-size:12.5px; border:1px solid var(--line2); border-bottom-width:2px; border-radius:5px; padding:1px 6px; background:var(--panel); }
 .where { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 .where > div { border:1px solid var(--line2); border-radius:10px; padding:18px 20px; background:var(--panel); display:flex; flex-direction:column; gap:6px; }
 .where b { font-weight:650; }
@@ -228,3 +231,7 @@ kbd { font:12.5px ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, mon
 .try { margin-top:10px; font-size:13.5px; color:var(--mut); }
 .showcase .try { max-width:760px; margin:10px auto 0; }
 @container zl (max-width:560px) { .frame.live iframe, .showcase .frame.live iframe { height:480px; } }
+
+/* Geist headings */
+.intro h1, .phero h1, .legal h1 { font-weight:600; letter-spacing:-0.035em; }
+.prod-name h2, .section h2, .legal h2 { font-weight:600; letter-spacing:-0.02em; }

@@ -16,7 +16,7 @@ AI Summarizer (Chrome) is written but hidden until it's published. Set `SHOW_SUM
 
 ## Assets
 
-- `assets/site.css`: all styles. Values follow the R2 design reference.
+- `assets/site.css`: all styles. Layout follows the R2 design reference; type is Geist and Geist Mono (`assets/fonts/`, SIL Open Font License), colours a cool GitHub-like palette.
 - `assets/theme.js`: applies a saved light/dark choice before the page paints.
 - `assets/site.js`: the header cat's zoom, the theme toggle, and copy buttons.
 - `assets/margin/`: the real Margin editor, copied from Margin's build (`dist/webview.js`, `dist/webview.css`), plus `host.js`, a stand-in for VS Code that feeds it a sample file and keeps edits in memory, and `vscode-theme.css` with VS Code's default colours. `embed/margin.html` runs it; the home and Margin pages show it in an iframe. After a Margin release, copy the new `dist/webview.*` files here.
