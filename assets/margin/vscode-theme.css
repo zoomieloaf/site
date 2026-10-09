@@ -1,0 +1,39 @@
+/* VS Code's default colours (Light Modern / Dark Modern), which VS Code normally gives the webview. */
+html, body { margin:0; height:100%; }
+:root {
+  --vscode-font-family:-apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, sans-serif;
+  --vscode-editor-font-family:Consolas, "Cascadia Mono", "SF Mono", Menlo, "Courier New", monospace;
+}
+body { background:var(--vscode-editor-background); color:var(--vscode-editor-foreground); }
+:root.vscode-light {
+  --vscode-editor-background:#FFFFFF; --vscode-editor-foreground:#3B3B3B;
+  --vscode-button-background:#005FB8; --vscode-button-foreground:#FFFFFF; --vscode-button-hoverBackground:#0258A8;
+  --vscode-input-background:#FFFFFF; --vscode-input-foreground:#3B3B3B; --vscode-input-border:#CECECE;
+  --vscode-focusBorder:#005FB8; --vscode-textLink-foreground:#005FB8;
+  --vscode-widget-shadow:rgba(0,0,0,.16); --vscode-editorWidget-background:#F8F8F8; --vscode-editorWidget-border:#C8C8C8;
+  --vscode-sideBar-background:#F8F8F8; --vscode-panel-border:#E5E5E5;
+  --vscode-menu-background:#FFFFFF; --vscode-menu-foreground:#3B3B3B; --vscode-menu-border:#CECECE;
+  --vscode-menu-selectionBackground:#005FB8; --vscode-menu-selectionForeground:#FFFFFF;
+  --vscode-textCodeBlock-background:#F2F2F2; --vscode-textPreformat-foreground:#3B3B3B; --vscode-textBlockQuote-border:#E5E5E5;
+  --vscode-editor-selectionBackground:#ADD6FF; --vscode-disabledForeground:#8B949E; --vscode-descriptionForeground:#717171;
+  --vscode-contrastBorder:transparent; --vscode-errorForeground:#F85149;
+  --vscode-charts-red:#E51400; --vscode-charts-orange:#D18616; --vscode-charts-green:#388A34; --vscode-charts-blue:#1A85FF;
+  --vscode-editorHoverWidget-background:#F8F8F8; --vscode-editorHoverWidget-foreground:#3B3B3B; --vscode-editorHoverWidget-border:#C8C8C8;
+  --vscode-toolbar-hoverBackground:rgba(184,184,184,.31);
+}
+:root.vscode-dark {
+  --vscode-editor-background:#1F1F1F; --vscode-editor-foreground:#CCCCCC;
+  --vscode-button-background:#0078D4; --vscode-button-foreground:#FFFFFF; --vscode-button-hoverBackground:#026EC1;
+  --vscode-input-background:#313131; --vscode-input-foreground:#CCCCCC; --vscode-input-border:#3C3C3C;
+  --vscode-focusBorder:#0078D4; --vscode-textLink-foreground:#4DAAFC;
+  --vscode-widget-shadow:rgba(0,0,0,.36); --vscode-editorWidget-background:#202020; --vscode-editorWidget-border:#454545;
+  --vscode-sideBar-background:#181818; --vscode-panel-border:#2B2B2B;
+  --vscode-menu-background:#1F1F1F; --vscode-menu-foreground:#CCCCCC; --vscode-menu-border:#454545;
+  --vscode-menu-selectionBackground:#0078D4; --vscode-menu-selectionForeground:#FFFFFF;
+  --vscode-textCodeBlock-background:#2B2B2B; --vscode-textPreformat-foreground:#D0D0D0; --vscode-textBlockQuote-border:#616161;
+  --vscode-editor-selectionBackground:#264F78; --vscode-disabledForeground:#8C8C8C; --vscode-descriptionForeground:#9D9D9D;
+  --vscode-contrastBorder:transparent; --vscode-errorForeground:#F85149;
+  --vscode-charts-red:#F14C4C; --vscode-charts-orange:#D18616; --vscode-charts-green:#89D185; --vscode-charts-blue:#3794FF;
+  --vscode-editorHoverWidget-background:#202020; --vscode-editorHoverWidget-foreground:#CCCCCC; --vscode-editorHoverWidget-border:#454545;
+  --vscode-toolbar-hoverBackground:rgba(90,93,94,.31);
+}

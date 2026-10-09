@@ -44,13 +44,12 @@ code, .mono { font-family:ui-monospace, "SF Mono", "Cascadia Code", Menlo, Conso
 .brand > a { font-weight:650; font-size:17px; letter-spacing:-0.01em; text-decoration:none; }
 .hnav { display:flex; align-items:center; gap:22px; font-size:15px; }
 .hnav a { text-decoration:none; }
-.hnav a:hover { text-decoration:underline; }
-.hnav a[aria-current="page"] { color:var(--accent); }
+.hnav a:hover, .hnav a[aria-current="page"] { text-decoration:underline; }
 .tgl { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; margin:-8px -10px -8px -6px; padding:0; border:0; border-radius:8px; background:none; color:inherit; cursor:pointer; }
 .tgl svg { width:18px; height:18px; }
 
 /* Buttons and links */
-.btn { display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:8px; background:var(--accent); color:var(--accent-fg); font-weight:600; font-size:15px; text-decoration:none; box-sizing:border-box; }
+.btn { display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:8px; background:var(--inv); color:var(--invfg); font-weight:600; font-size:15px; text-decoration:none; box-sizing:border-box; }
 .btn:hover { opacity:.88; }
 .lnk { font-weight:550; font-size:15px; min-height:44px; display:inline-flex; align-items:center; }
 .actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px 20px; }
@@ -79,7 +78,6 @@ code, .mono { font-family:ui-monospace, "SF Mono", "Cascadia Code", Menlo, Conso
 .facts { display:grid; grid-template-columns:88px minmax(0,1fr); gap:6px 16px; font-size:14.5px; line-height:1.5; padding-top:16px; border-top:1px solid var(--line); }
 .facts dt { color:var(--mut); }
 .icon-bg { fill:var(--fg); }
-.icon-bg.accent { fill:var(--accent); }
 .icon-fg { stroke:var(--bg); fill:none; }
 .icon-fg.thin { stroke-width:1.3; }
 .icon-fg.bold { stroke-width:2.3; stroke-linecap:round; }
@@ -91,17 +89,17 @@ code, .mono { font-family:ui-monospace, "SF Mono", "Cascadia Code", Menlo, Conso
 .frame-bar .file { font-size:12px; }
 .seg { display:flex; gap:2px; border:1px solid var(--line); border-radius:6px; padding:2px; font-size:11px; }
 .seg span { padding:1px 8px; border-radius:4px; }
-.seg .on { background:var(--accent); color:var(--accent-fg); }
+.seg .on { background:var(--inv); color:var(--invfg); }
 .url { flex:1; border:1px solid var(--line); border-radius:6px; padding:1px 10px; font-size:12px; color:var(--mut); }
 .mock { padding:28px 36px 32px; display:flex; flex-direction:column; gap:10px; }
 .mock.web { padding:26px 36px 30px; gap:12px; }
 .mock .doc-title { font-size:22px; font-weight:650; letter-spacing:-0.01em; }
-.mock .doc-link { text-decoration:underline; text-underline-offset:3px; color:var(--accent); }
+.mock .doc-link { text-decoration:underline; text-underline-offset:3px; color:var(--fg); }
 .mock .doc-h { font-size:15px; font-weight:650; margin-top:6px; }
 .todos { display:flex; flex-direction:column; gap:5px; }
 .todo { display:flex; gap:10px; align-items:center; }
 .box { flex:none; width:14px; height:14px; border-radius:3px; border:1.5px solid var(--line2); box-sizing:border-box; }
-.box.done { border:0; background:var(--accent); display:inline-flex; align-items:center; justify-content:center; }
+.box.done { border:0; background:var(--fg); display:inline-flex; align-items:center; justify-content:center; }
 .box.done svg { width:10px; height:10px; }
 .box.done path { fill:none; stroke:var(--panel); stroke-width:1.8; }
 .todo.done span:last-child { text-decoration:line-through; color:var(--mut); }
@@ -215,23 +213,13 @@ kbd { font:12.5px ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, mon
   .cmd code { font-size:12px; padding:0 10px; }
 }
 
-/* Links inside running text are blue; navigation and footer links stay quiet. */
-.prod-text p a, .phero a:not(.btn), .section a, .legal a, .intro a { color:var(--accent); }
+/* The only blue: links inside running text. Navigation, buttons and footer stay monochrome. */
+.phero .small a, .section a, .legal a { color:var(--accent); }
 
-/* Clickable Margin window */
-.vh { position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
-.seg button { padding:1px 8px; border:0; border-radius:4px; background:none; color:inherit; font:inherit; cursor:pointer; }
-.seg button[aria-pressed="true"] { background:var(--accent); color:var(--accent-fg); }
-label.todo { cursor:pointer; width:fit-content; }
-.box svg { display:none; width:10px; height:10px; }
-.box path { fill:none; stroke:var(--panel); stroke-width:1.8; }
-.todo input:checked + .box { border:0; background:var(--accent); display:inline-flex; align-items:center; justify-content:center; }
-.todo input:checked + .box svg { display:block; }
-.todo input:checked + .box + span { text-decoration:line-through; color:var(--mut); }
-.todo input:focus-visible + .box { outline:2px solid var(--accent); outline-offset:2px; }
-.src { margin:0; padding:28px 36px 32px; font-size:13px; line-height:1.75; white-space:pre-wrap; overflow-wrap:anywhere; min-height:0; }
-.src .changed { background:var(--accent-soft); box-shadow:0 0 0 3px var(--accent-soft); border-radius:2px; }
+/* The live Margin editor */
+.frame.live { line-height:0; }
+.frame.live iframe { display:block; width:100%; height:440px; border:0; background:var(--panel); }
+.showcase .frame.live iframe { height:560px; }
 .try { margin-top:10px; font-size:13.5px; color:var(--mut); }
-.mdmock [hidden] { display:none; }
-@container zl (max-width:560px) { .src { padding:20px 20px 22px; font-size:12px; } }
 .showcase .try { max-width:760px; margin:10px auto 0; }
+@container zl (max-width:560px) { .frame.live iframe, .showcase .frame.live iframe { height:480px; } }

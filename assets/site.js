@@ -19,7 +19,12 @@ if (toggle) toggle.addEventListener('click', () => {
   const dark = root.dataset.theme === 'dark' || (!root.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
   root.dataset.theme = dark ? 'light' : 'dark';
   try { localStorage.setItem('zl-theme', root.dataset.theme); } catch {}
+  document.querySelectorAll('.frame.live iframe').forEach((f) => f.contentWindow?.postMessage({ type: 'zl-theme', theme: root.dataset.theme }, '*'));
 });
+
+// A saved light/dark choice also goes to the live Margin editor.
+const saved = document.documentElement.dataset.theme;
+if (saved) document.querySelectorAll('.frame.live iframe').forEach((f) => { f.src = f.getAttribute('src') + '#' + saved; });
 
 // Copy buttons next to install commands.
 document.querySelectorAll('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
@@ -27,20 +32,3 @@ document.querySelectorAll('[data-copy]').forEach((b) => b.addEventListener('clic
   catch { b.textContent = 'Select and copy'; }
   setTimeout(() => (b.textContent = 'Copy'), 1500);
 }));
-
-// Margin window: Preview / Markdown, and ticked boxes rewrite exactly their own line.
-document.querySelectorAll('.mdmock').forEach((m) => {
-  const show = (view) => {
-    m.querySelectorAll('[data-view]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
-    m.querySelectorAll('[data-pane]').forEach((p) => (p.hidden = p.dataset.pane !== view));
-  };
-  m.querySelectorAll('[data-view]').forEach((b) => b.addEventListener('click', () => show(b.dataset.view)));
-  m.querySelectorAll('input[data-line]').forEach((box) => {
-    const line = m.querySelector(`[data-src="${box.dataset.line}"]`);
-    const was = box.checked;
-    box.addEventListener('change', () => {
-      line.textContent = line.textContent.replace(/\[.\]/, box.checked ? '[x]' : '[ ]');
-      line.classList.toggle('changed', box.checked !== was);
-    });
-  });
-});

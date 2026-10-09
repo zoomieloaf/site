@@ -14,10 +14,10 @@
 <header class="wrap site-header">
 <div class="brand"><button class="zl-catbtn" type="button" aria-label="Make the loaf zoom">
 <svg class="zl-puff" viewBox="0 0 44 18" aria-hidden="true"><circle cx="11" cy="12" r="5"/><circle cx="22" cy="9" r="6.5"/><circle cx="33" cy="12" r="4.5"/></svg>
-<svg class="zl-cat" viewBox="0 0 34 26" aria-hidden="true">
-<mask id="zl-eyes"><rect x="0" y="0" width="34" height="26" fill="#fff"/><circle cx="23.6" cy="12.8" r="1.35" fill="#000"/><circle cx="27.9" cy="12.8" r="1.35" fill="#000"/></mask>
-<g class="zl-plain"><rect x="1" y="11" width="26" height="14" rx="7"/><circle cx="25.5" cy="13.5" r="7.5"/><path d="M19.6 10 L21 2.2 L25.4 6.4 Z"/><path d="M26.4 6.2 L30.6 2.4 L32 10.2 Z"/></g>
-<g class="zl-eyed" mask="url(#zl-eyes)"><rect x="1" y="11" width="26" height="14" rx="7"/><circle cx="25.5" cy="13.5" r="7.5"/><path d="M19.6 10 L21 2.2 L25.4 6.4 Z"/><path d="M26.4 6.2 L30.6 2.4 L32 10.2 Z"/></g>
+<svg class="zl-cat" viewBox="76 14 180 136" aria-hidden="true">
+<mask id="zl-eyes"><rect x="76" y="14" width="180" height="136" fill="#fff"/><circle cx="198" cy="76" r="9.5" fill="#000"/><circle cx="227" cy="76" r="9.5" fill="#000"/></mask>
+<g class="zl-plain"><rect x="80" y="52" width="152" height="96" rx="48"/><ellipse cx="212" cy="76" rx="40" ry="36"/><path d="M186 54 192 20 211 45ZM217 43 238 18 246 56Z"/></g>
+<g class="zl-eyed" mask="url(#zl-eyes)"><rect x="80" y="52" width="152" height="96" rx="48"/><ellipse cx="212" cy="76" rx="40" ry="36"/><path d="M186 54 192 20 211 45ZM217 43 238 18 246 56Z"/></g>
 </svg>
 </button><a href="index.html">ZoomieLoaf</a></div>
 <nav class="hnav" aria-label="Main"><a href="margin/index.html">Margin</a><button class="tgl" type="button" aria-label="Switch between light and dark theme"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 3 A7 7 0 0 1 10 17 Z" fill="currentColor"/></svg></button></nav>
@@ -30,7 +30,7 @@
 <div class="wrap products">
 <article class="prod" aria-labelledby="p-margin">
 <div class="prod-text">
-<div class="prod-name"><svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg accent" width="40" height="40" rx="9"/><path class="icon-fg thin" d="M13 9 V31"/><path class="icon-fg bold" d="M17 14 H30 M17 20 H28 M17 26 H24"/></svg><div><h2 id="p-margin"><a href="margin/index.html">Margin</a></h2><div class="kind">Extension for VS Code</div></div></div>
+<div class="prod-name"><svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg" width="40" height="40" rx="9"/><path class="icon-fg thin" d="M13 9 V31"/><path class="icon-fg bold" d="M17 14 H30 M17 20 H28 M17 26 H24"/></svg><div><h2 id="p-margin"><a href="margin/index.html">Margin</a></h2><div class="kind">Extension for VS Code</div></div></div>
 <p>Opens Markdown files as a clean page you edit in place. The file stays plain Markdown, so ticking a checkbox is a one-line diff.</p>
 <dl class="facts">
 <dt>Works in</dt><dd>VS Code, Cursor, Windsurf, VSCodium</dd>
@@ -40,35 +40,8 @@
 <div class="actions"><a class="btn" href="https://marketplace.visualstudio.com/items?itemName=zoomieloaf.margin">Install for VS Code</a><a class="lnk" href="margin/index.html">About Margin</a></div>
 </div>
 <div>
-<div class="frame mdmock">
-<div class="frame-bar"><span class="mono file">launch-plan.md</span><span class="seg" role="group" aria-label="View"><button type="button" data-view="page" aria-pressed="true">Preview</button><button type="button" data-view="md" aria-pressed="false">Markdown</button></span></div>
-<div class="mock" data-pane="page">
-<div class="doc-title">Launch plan</div>
-<p class="mut">Everything before the store listings go live. Steps are in <span class="doc-link">Release checklist</span>.</p>
-<div class="doc-h">This week</div>
-<div class="todos">
-<label class="todo"><input type="checkbox" class="vh" data-line="1" checked><span class="box"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.4"/></svg></span><span>Record the demo</span></label>
-<label class="todo"><input type="checkbox" class="vh" data-line="2"><span class="box"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.4"/></svg></span><span>Write the Open VSX description</span></label>
-<label class="todo"><input type="checkbox" class="vh" data-line="3"><span class="box"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.4"/></svg></span><span>Proofread the privacy policy</span></label>
-</div>
-<div class="tbl"><span class="th">Store</span><span class="th">Status</span><span>VS Code Marketplace</span><span>Submitted</span><span>Open VSX</span><span>Draft</span></div>
-</div>
-<pre class="mono src" data-pane="md" hidden># Launch plan
-
-Everything before the store listings go live. Steps are in [Release checklist](release-checklist.md).
-
-## This week
-
-<span data-src="1">- [x] Record the demo</span>
-<span data-src="2">- [ ] Write the Open VSX description</span>
-<span data-src="3">- [ ] Proofread the privacy policy</span>
-
-| Store               | Status    |
-| ------------------- | --------- |
-| VS Code Marketplace | Submitted |
-| Open VSX            | Draft     |</pre>
-</div>
-<p class="try">Tick a box, then switch to Markdown. Only that line changes.</p>
+<div class="frame live"><iframe src="embed/margin.html" title="Margin, running live on a sample file" loading="lazy"></iframe></div>
+<p class="try">This is the real Margin editor. Switch to Edit or Markdown, tick a box, type something.</p>
 </div>
 </article>
 
