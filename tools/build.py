@@ -5,7 +5,7 @@ Edit the text here, not in the generated HTML files.
 """
 import pathlib, re
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+ROOT = pathlib.Path(__file__).resolve().parent.parent / 'public'
 MARGIN_STORE = 'https://marketplace.visualstudio.com/items?itemName=zoomieloaf.margin'
 MARGIN_OVSX = 'https://open-vsx.org/extension/zoomieloaf/margin'
 CHROME_STORE = '#add-to-chrome'  # replace with the Chrome Web Store link once it's published
