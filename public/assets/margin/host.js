@@ -2,46 +2,46 @@
 // editor tab. Edits are kept in memory per file while the page is open. Nothing is saved or sent.
 (() => {
   const FILES = {
-    'README.md': `# Docs
+    'README.md': `# The loaf's docs
 
-Notes for the launch. Start with the [launch plan](launch-plan.md), then the [release checklist](release-checklist.md).
+Start with [Operation Zoomies](launch-plan.md). If something breaks, check the [release checklist](release-checklist.md), then blame the cat.
 `,
-    'launch-plan.md': `# Launch plan
+    'launch-plan.md': `# Operation Zoomies
 
-Everything before the store listings go live. Steps are in [Release checklist](release-checklist.md).
+Everything the cat must do before the store listings go live. The nap schedule is below. The boring part is in [Release checklist](release-checklist.md).
 
 > [!TIP]
-> Press **Ctrl+E**, or double-click any text, to edit right here. Your file stays plain Markdown.
+> Press **Ctrl+E**, or double-click any text, to edit right here. The cat won't notice. Your file stays plain Markdown.
 
 ## This week
 
-- [x] Record the demo
-- [ ] Write the Open VSX description
-- [ ] Proofread the privacy policy
+- [x] Knock the coffee mug off the desk (testing gravity)
+- [ ] Sit on the keyboard during the demo
+- [ ] Proofread the privacy policy at 3 a.m.
 
-## Stores
+## Nap schedule
 
-| Store | Status |
+| Time | Activity |
 | --- | --- |
-| VS Code Marketplace | Submitted |
-| Open VSX | Draft |
+| 09:00 | Loaf |
+| 13:00 | Loaf, but in the sun |
+| 03:00 | Zoomies |
 `,
     'release-checklist.md': `# Release checklist
 
-Run these before tagging a version. Back to the [launch plan](launch-plan.md).
+What happens between the loaf and the zoom. Back to [Operation Zoomies](launch-plan.md).
 
 ## Before the tag
 
 - [x] Tests pass on Windows, macOS and Linux
-- [x] \`CHANGELOG.md\` has a section for the version
-- [ ] Screenshots in the README are current
+- [x] The cat has approved the changelog (sat on it)
+- [ ] Screenshots don't show a tail in the corner
 
 ## Publish
 
 \`\`\`bash
 npm run package
-npx vsce publish
-npx ovsx publish margin-0.1.0.vsix
+npx vsce publish   # then nap
 \`\`\`
 `,
   };
