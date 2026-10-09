@@ -3,21 +3,21 @@
 :root {
   --bg:#F7F6F3; --fg:#171615; --mut:#5E5B55; --line:#E3E0DA; --line2:#CCC8C0;
   --panel:#FFFFFF; --soft:#F0EEE9; --sel:#DDD9D0; --dust:#A3A098; --inv:#171615; --invfg:#F7F6F3;
-  --accent:#0969DA; --accent-fg:#FFFFFF; --accent-soft:#DDEBFB;
+  --accent:#005FB8; --accent-fg:#FFFFFF; --accent-soft:#DDEBFB; --link:#005FB8;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark) {
   :root:not([data-theme="light"]) {
     --bg:#131211; --fg:#ECEAE6; --mut:#A3A099; --line:#292725; --line2:#3B3835;
     --panel:#1A1917; --soft:#1F1D1B; --sel:#3D3A36; --dust:#6A675F; --inv:#ECEAE6; --invfg:#1A1917;
-    --accent:#4493F8; --accent-fg:#0B1220; --accent-soft:#1B2A40;
+    --accent:#0078D4; --accent-fg:#FFFFFF; --accent-soft:#1B2A40; --link:#4DAAFC;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"] {
   --bg:#131211; --fg:#ECEAE6; --mut:#A3A099; --line:#292725; --line2:#3B3835;
   --panel:#1A1917; --soft:#1F1D1B; --sel:#3D3A36; --dust:#6A675F; --inv:#ECEAE6; --invfg:#1A1917;
-    --accent:#4493F8; --accent-fg:#0B1220; --accent-soft:#1B2A40;
+    --accent:#0078D4; --accent-fg:#FFFFFF; --accent-soft:#1B2A40; --link:#4DAAFC;
   color-scheme:dark;
 }
 
@@ -49,8 +49,10 @@ code, .mono { font-family:ui-monospace, "SF Mono", "Cascadia Code", Menlo, Conso
 .tgl svg { width:18px; height:18px; }
 
 /* Buttons and links */
-.btn { display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:8px; background:var(--inv); color:var(--invfg); font-weight:600; font-size:15px; text-decoration:none; box-sizing:border-box; }
-.btn:hover { opacity:.88; }
+.btn { display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:8px; background:var(--accent); color:var(--accent-fg); font-weight:600; font-size:15px; text-decoration:none; box-sizing:border-box; }
+.btn:hover { opacity:.9; }
+.btn.ghost { background:none; color:var(--fg); border:1px solid var(--line2); }
+.btn.ghost:hover { border-color:var(--fg); opacity:1; }
 .lnk { font-weight:550; font-size:15px; min-height:44px; display:inline-flex; align-items:center; }
 .actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px 20px; }
 
@@ -78,6 +80,7 @@ code, .mono { font-family:ui-monospace, "SF Mono", "Cascadia Code", Menlo, Conso
 .facts { display:grid; grid-template-columns:88px minmax(0,1fr); gap:6px 16px; font-size:14.5px; line-height:1.5; padding-top:16px; border-top:1px solid var(--line); }
 .facts dt { color:var(--mut); }
 .icon-bg { fill:var(--fg); }
+.icon-bg.accent { fill:var(--accent); }
 .icon-fg { stroke:var(--bg); fill:none; }
 .icon-fg.thin { stroke-width:1.3; }
 .icon-fg.bold { stroke-width:2.3; stroke-linecap:round; }
@@ -214,11 +217,13 @@ kbd { font:12.5px ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, mon
 }
 
 /* The only blue: links inside running text. Navigation, buttons and footer stay monochrome. */
-.phero .small a, .section a, .legal a { color:var(--accent); }
+.phero a:not(.btn), .section a, .legal a, .prod-text p a { color:var(--link); }
 
 /* The live Margin editor */
 .frame.live { line-height:0; }
-.frame.live iframe { display:block; width:100%; height:440px; border:0; background:var(--panel); }
+.frame.live { position:relative; }
+.frame.live::before { content:"Loading Margin…"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--mut); font-size:14px; line-height:1.6; }
+.frame.live iframe { position:relative; display:block; width:100%; height:440px; border:0; background:transparent; }
 .showcase .frame.live iframe { height:560px; }
 .try { margin-top:10px; font-size:13.5px; color:var(--mut); }
 .showcase .try { max-width:760px; margin:10px auto 0; }

@@ -25,14 +25,14 @@ CAT = '''<button class="zl-catbtn" type="button" aria-label="Make the loaf zoom"
 
 TOGGLE = '<button class="tgl" type="button" aria-label="Switch between light and dark theme"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 3 A7 7 0 0 1 10 17 Z" fill="currentColor"/></svg></button>'
 
-ICON_MARGIN = '<svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg" width="40" height="40" rx="9"/><path class="icon-fg thin" d="M13 9 V31"/><path class="icon-fg bold" d="M17 14 H30 M17 20 H28 M17 26 H24"/></svg>'
+ICON_MARGIN = '<svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg accent" width="40" height="40" rx="9"/><path class="icon-fg thin" d="M13 9 V31"/><path class="icon-fg bold" d="M17 14 H30 M17 20 H28 M17 26 H24"/></svg>'
 ICON_SUM = '<svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg" width="40" height="40" rx="9"/><path class="icon-fg bold" d="M10 12 H30 M10 29 H22"/><rect class="icon-fill" x="8" y="17" width="24" height="7" rx="2"/></svg>'
 
 CHECK = '<span class="box done"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.4"/></svg></span>'
 
 # The real Margin editor (Margin's own webview build in assets/margin), running on a sample file.
 MOCK_MARGIN = '''<div>
-<div class="frame live"><iframe src="{p}embed/margin.html" title="Margin, running live on a sample file" loading="lazy"></iframe></div>
+<div class="frame live"><iframe src="{p}embed/margin.html" title="Margin, running live on a sample file"></iframe></div>
 <p class="try">This is the real Margin editor. Switch to Edit or Markdown, tick a box, type something.</p>
 </div>'''
 
@@ -97,7 +97,7 @@ HOME = f'''<section class="wrap intro"><div>
 <dt>Your files</dt><dd>Plain Markdown. Only edited blocks change.</dd>
 <dt>Price</dt><dd>Free</dd>
 </dl>
-<div class="actions"><a class="btn" href="{MARGIN_STORE}">Install for VS Code</a><a class="lnk" href="{{p}}margin/index.html">About Margin</a></div>
+<div class="actions"><a class="btn" href="{MARGIN_STORE}">Install for VS Code</a><a class="btn ghost" href="{MARGIN_OVSX}">Install from Open VSX</a><a class="lnk" href="{{p}}margin/index.html">About Margin</a></div>
 </div>
 {MOCK_MARGIN}
 </article>
@@ -130,8 +130,9 @@ MARGIN = f'''<section class="wrap phero">
 <div class="prod-name">{ICON_MARGIN}<div class="kind">Margin, an extension for VS Code</div></div>
 <h1>Edit Markdown as a page. Commit plain text.</h1>
 <p>Margin opens <code>.md</code> files in VS Code, Cursor, Windsurf and VSCodium as a clean page you edit in place. When you save, only the lines you changed change.</p>
-<div class="actions"><a class="btn" href="{MARGIN_STORE}">Install for VS Code</a><span class="cmd"><code>{CMD}</code><button type="button" data-copy="{CMD}">Copy</button></span></div>
-<p class="small">Cursor, Windsurf or VSCodium? <a href="{MARGIN_OVSX}">Get it on Open VSX</a>.</p>
+<div class="actions"><a class="btn" href="{MARGIN_STORE}">Install for VS Code</a><a class="btn ghost" href="{MARGIN_OVSX}">Install from Open VSX</a></div>
+<span class="cmd"><code>{CMD}</code><button type="button" data-copy="{CMD}">Copy</button></span>
+<p class="small">Open VSX is for Cursor, Windsurf, VSCodium and other editors without the VS Code Marketplace.</p>
 </section>
 <section class="wrap showcase">{MOCK_MARGIN}</section>
 <section class="wrap section">
