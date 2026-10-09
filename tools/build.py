@@ -25,7 +25,8 @@ CAT = '''<button class="zl-catbtn" type="button" aria-label="Make the loaf zoom"
 
 TOGGLE = '<button class="tgl" type="button" aria-label="Switch between light and dark theme"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 3 A7 7 0 0 1 10 17 Z" fill="currentColor"/></svg></button>'
 
-ICON_MARGIN = '<svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg accent" width="40" height="40" rx="9"/><path class="icon-fg thin" d="M13 9 V31"/><path class="icon-fg bold" d="M17 14 H30 M17 20 H28 M17 26 H24"/></svg>'
+# Margin's own icon (vscode-md/media/icon.svg), in its own colours in both themes.
+ICON_MARGIN = '<svg viewBox="0 0 256 256" aria-hidden="true"><rect width="256" height="256" rx="56" fill="#17191e"/><rect x="1" y="1" width="254" height="254" rx="55" fill="none" stroke="#3a3e47" stroke-width="2"/><g transform="translate(128 128) scale(.78) translate(-128 -128)" fill="none" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"><path d="M34 182 V74 L86 146 L138 74 V182" stroke="#fff"/><path d="M200 74 V178 M178 156 L200 180 L222 156" stroke="#6b8cff"/></g></svg>'
 ICON_SUM = '<svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg" width="40" height="40" rx="9"/><path class="icon-fg bold" d="M10 12 H30 M10 29 H22"/><rect class="icon-fill" x="8" y="17" width="24" height="7" rx="2"/></svg>'
 
 CHECK = '<span class="box done"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.4"/></svg></span>'
