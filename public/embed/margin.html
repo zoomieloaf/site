@@ -10,7 +10,24 @@
 </head>
 <body class="vscode-light">
 <script src="../assets/margin/host.js"></script>
-<div id="app"></div>
+<!-- A small VS Code window around Margin's real editor: activity bar, Explorer, one editor tab. -->
+<div class="vsc">
+  <nav class="vsc-activity" aria-label="Activity bar">
+    <span class="on" title="Explorer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5"/></svg></span>
+    <span title="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5.5 5.5"/></svg></span>
+    <span title="Source Control"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="5.5" r="2"/><circle cx="7" cy="18.5" r="2"/><circle cx="17" cy="8.5" r="2"/><path d="M7 7.5v9M17 10.5c0 4-10 2-10 6"/></svg></span>
+    <span title="Extensions"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="7" height="7"/><rect x="11" y="11" width="7" height="7"/><rect x="4" y="4" width="7" height="7"/><rect x="14" y="2" width="7" height="7"/></svg></span>
+  </nav>
+  <aside class="vsc-side" aria-label="Explorer">
+    <div class="vsc-side-title">Explorer</div>
+    <div class="vsc-folder"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m5 6 3 3 3-3"/></svg>docs</div>
+    <ul class="vsc-files" id="files"></ul>
+  </aside>
+  <section class="vsc-editor">
+    <div class="vsc-tabs"><div class="vsc-tab"><span class="md-icon" aria-hidden="true">M↓</span><span id="tabName">launch-plan.md</span><span class="vsc-close" aria-hidden="true">×</span></div></div>
+    <div id="app"></div>
+  </section>
+</div>
 <script src="../assets/margin/webview.js"></script>
 </body>
 </html>
