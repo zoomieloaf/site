@@ -46,6 +46,9 @@ npx ovsx publish margin-0.1.0.vsix
 `,
   };
 
+  // ?bare shows only Margin's editor, without the VS Code window around it (the home page uses this).
+  if (new URLSearchParams(location.search).has('bare')) document.documentElement.dataset.bare = '';
+
   // Light or dark: from the parent page (#light / #dark, or a message), otherwise the system setting.
   const pick = () => (location.hash === '#dark' ? 'dark' : location.hash === '#light' ? 'light' : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   // VS Code puts its colour variables on the root element, and Margin reads them from there.

@@ -72,3 +72,4 @@ body { background:var(--vscode-editor-background); color:var(--vscode-editor-for
 #app { flex:1; min-height:0; position:relative; }
 @media (max-width:440px) { .vsc-side { display:none; } }
 @media (max-width:380px) { .vsc-activity { display:none; } }
+[data-bare] .vsc-activity, [data-bare] .vsc-side, [data-bare] .vsc-tabs { display:none; }

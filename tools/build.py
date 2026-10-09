@@ -36,6 +36,10 @@ MOCK_MARGIN = '''<div>
 <div class="frame live"><iframe src="{p}embed/margin.html" title="Margin, running live in a small VS Code window with sample files"></iframe></div>
 <p class="try">This is the real Margin editor. Switch to Edit or Markdown, tick a box, or open another file.</p>
 </div>'''
+MOCK_MARGIN_BARE = '''<div>
+<div class="frame live"><iframe src="{p}embed/margin.html?bare" title="Margin, running live on a sample file"></iframe></div>
+<p class="try">This is the real Margin editor. Switch to Edit or Markdown, tick a box, type something.</p>
+</div>'''
 
 MOCK_SUM = '''<div class="frame" role="img" aria-label="AI Summarizer: text selected on a web page, the action bar below it, and a summary answered on the device">
 <div class="frame-bar"><span class="url">example.org/why-cats-sleep</span></div>
@@ -100,7 +104,7 @@ HOME = f'''<section class="wrap intro"><div>
 </dl>
 <div class="actions"><a class="btn" href="{MARGIN_STORE}">Install for VS Code</a><a class="btn ghost" href="{MARGIN_OVSX}">Install from Open VSX</a><a class="lnk" href="{{p}}margin/index.html">About Margin</a></div>
 </div>
-{MOCK_MARGIN}
+{MOCK_MARGIN_BARE}
 </article>
 {{HOME_SUM}}
 </div>'''
