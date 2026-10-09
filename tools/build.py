@@ -91,7 +91,7 @@ HOME = f'''<section class="wrap intro"><div>
 <article class="prod" aria-labelledby="p-margin">
 <div class="prod-text">
 <div class="prod-name">{ICON_MARGIN}<div><h2 id="p-margin"><a href="{{p}}margin/index.html">Margin</a></h2><div class="kind">Extension for VS Code</div></div></div>
-<p>Opens Markdown files as a clean page you edit in place. The file stays plain Markdown, so ticking a checkbox is a one-line diff.</p>
+<p>Notion-style editing for your Markdown files. Open a <code>.md</code> file as a clean page and edit it in place, with a slash menu, block handles and drag and drop. The file stays plain Markdown, so ticking a checkbox is a one-line diff.</p>
 <dl class="facts">
 <dt>Works in</dt><dd>VS Code, Cursor, Windsurf, VSCodium</dd>
 <dt>Your files</dt><dd>Plain Markdown. Only edited blocks change.</dd>
@@ -129,7 +129,7 @@ def feature_list(items):
 MARGIN = f'''<section class="wrap phero">
 <div class="prod-name">{ICON_MARGIN}<div class="kind">Margin, an extension for VS Code</div></div>
 <h1>Edit Markdown as a page. Commit plain text.</h1>
-<p>Margin opens <code>.md</code> files in VS Code, Cursor, Windsurf and VSCodium as a clean page you edit in place. When you save, only the lines you changed change.</p>
+<p>Margin brings Notion-style editing to <code>.md</code> files in VS Code, Cursor, Windsurf and VSCodium: a clean page you edit in place, with a slash menu and blocks you drag around. When you save, only the lines you changed change.</p>
 <div class="actions"><a class="btn" href="{MARGIN_STORE}">Install for VS Code</a><a class="btn ghost" href="{MARGIN_OVSX}">Install from Open VSX</a></div>
 <span class="cmd"><code>{CMD}</code><button type="button" data-copy="{CMD}">Copy</button></span>
 <p class="small">Open VSX is for Cursor, Windsurf, VSCodium and other editors without the VS Code Marketplace.</p>
@@ -163,7 +163,7 @@ MARGIN = f'''<section class="wrap phero">
 </ol>
 </section>'''
 page('margin/index.html', 'Margin: edit Markdown as a page in VS Code',
-     'Margin opens Markdown files in VS Code, Cursor, Windsurf and VSCodium as a clean page you edit in place. The file stays plain Markdown.', MARGIN, 'margin')
+     'Notion-style editing for Markdown in VS Code, Cursor, Windsurf and VSCodium. Edit .md files as a clean page; the file stays plain Markdown.', MARGIN, 'margin')
 
 
 # ---------- AI Summarizer ----------
