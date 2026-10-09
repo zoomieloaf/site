@@ -2,47 +2,42 @@
 // editor tab. Edits are kept in memory per file while the page is open. Nothing is saved or sent.
 (() => {
   const FILES = {
-    'README.md': `# The loaf's docs
+    'README.md': `# Team docs
 
-Start with [Operation Zoomies](launch-plan.md). If something breaks, check the [release checklist](release-checklist.md), then blame the cat.
+Plain Markdown, so it survives the next three tool migrations. Start with the [postmortem](postmortem.md).
 `,
-    'launch-plan.md': `# Operation Zoomies
+    'lessons.md': `# What we learned
 
-Everything the cat must do before the store listings go live. The nap schedule is below. The boring part is in [Release checklist](release-checklist.md).
+Back to the [postmortem](postmortem.md).
 
-> [!TIP]
-> Press **Ctrl+E**, or double-click any text, to edit right here. The cat won't notice. Your file stays plain Markdown.
-
-## This week
-
-- [x] Knock the coffee mug off the desk (testing gravity)
-- [ ] Sit on the keyboard during the demo
-- [ ] Proofread the privacy policy at 3 a.m.
-
-## Nap schedule
-
-| Time | Activity |
-| --- | --- |
-| 09:00 | Loaf |
-| 13:00 | Loaf, but in the sun |
-| 03:00 | Zoomies |
-`,
-    'release-checklist.md': `# Release checklist
-
-What happens between the loaf and the zoom. Back to [Operation Zoomies](launch-plan.md).
-
-## Before the tag
-
-- [x] Tests pass on Windows, macOS and Linux
-- [x] The cat has approved the changelog (sat on it)
-- [ ] Screenshots don't show a tail in the corner
-
-## Publish
+- [x] Friday is a state of mind, not a deploy window
+- [ ] Read the diff before writing "LGTM"
+- [ ] Rename \`final.md\`, \`final-2.md\` and \`final-final.md\`
 
 \`\`\`bash
-npm run package
-npx vsce publish   # then nap
+git log --since="friday 16:00"   # the evidence
 \`\`\`
+`,
+    'postmortem.md': `# Postmortem: Friday, 16:58
+
+**What happened:** a one-line change went out without review. It was three hundred lines. What we took away is in [What we learned](lessons.md).
+
+> [!TIP]
+> Press **Ctrl+E**, or double-click any text, to edit this before anyone else reads it. The file stays plain Markdown.
+
+## Action items
+
+- [x] Revert
+- [ ] Find out who \`temp-fix-final-v2\` was
+- [ ] Add a confirmation dialog to the confirmation dialog
+
+## Timeline
+
+| Time | Event |
+| --- | --- |
+| 16:58 | "Tiny change, no need for review" |
+| 17:03 | Everything is on fire |
+| 17:45 | Revert, apology, pizza |
 `,
   };
 
@@ -56,7 +51,7 @@ npx vsce publish   # then nap
   setTheme(pick());
   addEventListener('message', (e) => { if (e.data && e.data.type === 'zl-theme') setTheme(e.data.theme); });
 
-  let current = 'launch-plan.md';
+  let current = 'postmortem.md';
   let version = 1;
   const back = [], forward = [];
   const send = (m) => window.postMessage(m, '*');
