@@ -183,25 +183,25 @@ kbd { font-size:12.5px; border:1px solid var(--line2); border-bottom-width:2px; 
 .zl-eyed { opacity:0; }
 .zl-puff { position:absolute; left:-6px; bottom:-3px; width:44px; height:18px; opacity:0; pointer-events:none; color:var(--dust); transform-origin:50% 100%; }
 .zl-puff circle { fill:currentColor; }
-.zl-zoom .zl-cat { animation:zl-trip 2.6s linear both; }
-.zl-zoom .zl-eyed { animation:zl-eyes 2.6s step-end both; }
-.zl-zoom .zl-plain { animation:zl-noeyes 2.6s step-end both; }
-.zl-zoom .zl-puff { animation:zl-puff 2.6s ease-out both; }
+.zl-zoom .zl-cat { animation:zl-trip 3s linear both; }
+.zl-zoom .zl-eyed { animation:zl-eyes 3s step-end both; }
+.zl-zoom .zl-plain { animation:zl-noeyes 3s step-end both; }
+.zl-zoom .zl-puff { animation:zl-puff 3s ease-out both; }
+/* The eyes open first, the cat holds still for a beat, then winds up and runs. */
 @keyframes zl-trip {
-  0% { transform:none; animation-timing-function:ease-out; }
-  9% { transform:translateX(-3px) scale(1.14,.84); animation-timing-function:cubic-bezier(.5,0,1,1); }
-  14% { transform:translateX(5px) scale(1.3,.88); animation-timing-function:cubic-bezier(.6,0,1,.7); }
-  30% { transform:translateX(calc(100cqw + 80px)) scale(2.4,.7); visibility:visible; }
-  30.5% { transform:translateX(calc(100cqw + 80px)) scale(2.4,.7); visibility:hidden; }
-  67.99% { transform:translateX(calc(100cqw + 80px)) scale(2.4,.7); visibility:hidden; }
-  68% { transform:translateX(-60cqw) scale(2.4,.7); visibility:visible; animation-timing-function:cubic-bezier(0,.55,.35,1); }
-  86% { transform:translateX(2px) scale(1.06,.97); animation-timing-function:ease-out; }
-  91% { transform:translateX(0) scale(1.16,.82); animation-timing-function:ease-in-out; }
+  0%, 13% { transform:none; animation-timing-function:ease-out; }
+  21% { transform:translateX(-3px) scale(1.14,.84); animation-timing-function:cubic-bezier(.5,0,1,1); }
+  25.5% { transform:translateX(5px) scale(1.3,.88); animation-timing-function:cubic-bezier(.6,0,1,.7); }
+  39.3% { transform:translateX(calc(100cqw + 80px)) scale(2.4,.7); visibility:visible; }
+  39.8%, 72.29% { transform:translateX(calc(100cqw + 80px)) scale(2.4,.7); visibility:hidden; }
+  72.3% { transform:translateX(-60cqw) scale(2.4,.7); visibility:visible; animation-timing-function:cubic-bezier(0,.55,.35,1); }
+  87.9% { transform:translateX(2px) scale(1.06,.97); animation-timing-function:ease-out; }
+  92.2% { transform:translateX(0) scale(1.16,.82); animation-timing-function:ease-in-out; }
   100% { transform:none; }
 }
-@keyframes zl-eyes { 0% { opacity:0; } 9% { opacity:1; } 92% { opacity:0; } }
-@keyframes zl-noeyes { 0% { opacity:1; } 9% { opacity:0; } 92% { opacity:1; } }
-@keyframes zl-puff { 0%, 11% { opacity:0; transform:scale(.4); } 16% { opacity:.85; transform:scale(.9); } 46% { opacity:0; transform:translateY(-4px) scale(1.5); } 100% { opacity:0; } }
+@keyframes zl-eyes { 0% { opacity:0; } 2% { opacity:1; } 96% { opacity:0; } }
+@keyframes zl-noeyes { 0% { opacity:1; } 2% { opacity:0; } 96% { opacity:1; } }
+@keyframes zl-puff { 0%, 23% { opacity:0; transform:scale(.4); } 27% { opacity:.85; transform:scale(.9); } 52% { opacity:0; transform:translateY(-4px) scale(1.5); } 100% { opacity:0; } }
 @media (prefers-reduced-motion:reduce) {
   .zl-zoom .zl-cat, .zl-zoom .zl-eyed, .zl-zoom .zl-plain, .zl-zoom .zl-puff { animation:none; }
 }

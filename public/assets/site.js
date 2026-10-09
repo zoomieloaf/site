@@ -7,7 +7,7 @@ function zoom() {
   if (!cat || zooming || calm.matches) return;
   zooming = true;
   cat.classList.add('zl-zoom');
-  setTimeout(() => { cat.classList.remove('zl-zoom'); zooming = false; }, 2650);
+  setTimeout(() => { cat.classList.remove('zl-zoom'); zooming = false; }, 3050);
 }
 function later(ms) { setTimeout(() => { zoom(); later(18000 + Math.random() * 24000); }, ms); }
 if (cat) { cat.addEventListener('click', zoom); later(5000); }
