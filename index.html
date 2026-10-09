@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ZoomieLoaf: small tools for reading and writing</title>
-<meta name="description" content="ZoomieLoaf makes Margin, a Markdown editor for VS Code, and AI Summarizer, a private AI helper for Chrome. Mostly loaf. Occasionally zoom.">
+<meta name="description" content="ZoomieLoaf makes small tools for reading and writing, like Margin, a Markdown editor for VS Code. Mostly loaf. Occasionally zoom.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/theme.js"></script>
@@ -20,7 +20,7 @@
 <g class="zl-eyed" mask="url(#zl-eyes)"><rect x="1" y="11" width="26" height="14" rx="7"/><circle cx="25.5" cy="13.5" r="7.5"/><path d="M19.6 10 L21 2.2 L25.4 6.4 Z"/><path d="M26.4 6.2 L30.6 2.4 L32 10.2 Z"/></g>
 </svg>
 </button><a href="index.html">ZoomieLoaf</a></div>
-<nav class="hnav" aria-label="Main"><a href="margin/index.html">Margin</a><a href="ai-summarizer/index.html">AI Summarizer</a><button class="tgl" type="button" aria-label="Switch between light and dark theme"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 3 A7 7 0 0 1 10 17 Z" fill="currentColor"/></svg></button></nav>
+<nav class="hnav" aria-label="Main"><a href="margin/index.html">Margin</a><button class="tgl" type="button" aria-label="Switch between light and dark theme"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 3 A7 7 0 0 1 10 17 Z" fill="currentColor"/></svg></button></nav>
 </header>
 <main>
 <section class="wrap intro"><div>
@@ -30,7 +30,7 @@
 <div class="wrap products">
 <article class="prod" aria-labelledby="p-margin">
 <div class="prod-text">
-<div class="prod-name"><svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg" width="40" height="40" rx="9"/><path class="icon-fg thin" d="M13 9 V31"/><path class="icon-fg bold" d="M17 14 H30 M17 20 H28 M17 26 H24"/></svg><div><h2 id="p-margin"><a href="margin/index.html">Margin</a></h2><div class="kind">Extension for VS Code</div></div></div>
+<div class="prod-name"><svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg accent" width="40" height="40" rx="9"/><path class="icon-fg thin" d="M13 9 V31"/><path class="icon-fg bold" d="M17 14 H30 M17 20 H28 M17 26 H24"/></svg><div><h2 id="p-margin"><a href="margin/index.html">Margin</a></h2><div class="kind">Extension for VS Code</div></div></div>
 <p>Opens Markdown files as a clean page you edit in place. The file stays plain Markdown, so ticking a checkbox is a one-line diff.</p>
 <dl class="facts">
 <dt>Works in</dt><dd>VS Code, Cursor, Windsurf, VSCodium</dd>
@@ -39,43 +39,39 @@
 </dl>
 <div class="actions"><a class="btn" href="https://marketplace.visualstudio.com/items?itemName=zoomieloaf.margin">Install for VS Code</a><a class="lnk" href="margin/index.html">About Margin</a></div>
 </div>
-<div class="frame" role="img" aria-label="Margin showing a Markdown file as a rendered page with to-dos and a table">
-<div class="frame-bar"><span class="mono file">launch-plan.md</span><span class="seg"><span class="on">Preview</span><span>Edit</span></span></div>
-<div class="mock">
+<div>
+<div class="frame mdmock">
+<div class="frame-bar"><span class="mono file">launch-plan.md</span><span class="seg" role="group" aria-label="View"><button type="button" data-view="page" aria-pressed="true">Preview</button><button type="button" data-view="md" aria-pressed="false">Markdown</button></span></div>
+<div class="mock" data-pane="page">
 <div class="doc-title">Launch plan</div>
 <p class="mut">Everything before the store listings go live. Steps are in <span class="doc-link">Release checklist</span>.</p>
 <div class="doc-h">This week</div>
 <div class="todos">
-<div class="todo done"><span class="box done"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.4"/></svg></span><span>Record the demo</span></div>
-<div class="todo"><span class="box"></span><span>Write the Open VSX description</span></div>
-<div class="todo"><span class="box"></span><span>Proofread the privacy policy</span></div>
+<label class="todo"><input type="checkbox" class="vh" data-line="1" checked><span class="box"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.4"/></svg></span><span>Record the demo</span></label>
+<label class="todo"><input type="checkbox" class="vh" data-line="2"><span class="box"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.4"/></svg></span><span>Write the Open VSX description</span></label>
+<label class="todo"><input type="checkbox" class="vh" data-line="3"><span class="box"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.4"/></svg></span><span>Proofread the privacy policy</span></label>
 </div>
 <div class="tbl"><span class="th">Store</span><span class="th">Status</span><span>VS Code Marketplace</span><span>Submitted</span><span>Open VSX</span><span>Draft</span></div>
 </div>
+<pre class="mono src" data-pane="md" hidden># Launch plan
+
+Everything before the store listings go live. Steps are in [Release checklist](release-checklist.md).
+
+## This week
+
+<span data-src="1">- [x] Record the demo</span>
+<span data-src="2">- [ ] Write the Open VSX description</span>
+<span data-src="3">- [ ] Proofread the privacy policy</span>
+
+| Store               | Status    |
+| ------------------- | --------- |
+| VS Code Marketplace | Submitted |
+| Open VSX            | Draft     |</pre>
+</div>
+<p class="try">Tick a box, then switch to Markdown. Only that line changes.</p>
 </div>
 </article>
-<article class="prod" aria-labelledby="p-sum">
-<div class="prod-text">
-<div class="prod-name"><svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg" width="40" height="40" rx="9"/><path class="icon-fg bold" d="M10 12 H30 M10 29 H22"/><rect class="icon-fill" x="8" y="17" width="24" height="7" rx="2"/></svg><div><h2 id="p-sum"><a href="ai-summarizer/index.html">AI Summarizer</a></h2><div class="kind">Extension for Chrome</div></div></div>
-<p>Select text on any page to explain, translate, summarize, fix grammar or ask about it. Chat about the page with AI that runs on your device.</p>
-<dl class="facts">
-<dt>Works in</dt><dd>Chrome</dd>
-<dt>Account</dt><dd>None. No sign-up, no API key.</dd>
-<dt>AI</dt><dd>On-device, works offline after a one-time download. Or use your own ChatGPT or Claude login.</dd>
-<dt>Price</dt><dd>Free</dd>
-</dl>
-<div class="actions"><a class="btn" href="#add-to-chrome">Add to Chrome</a><a class="lnk" href="ai-summarizer/index.html">About AI Summarizer</a></div>
-</div>
-<div class="frame" role="img" aria-label="AI Summarizer: text selected on a web page, the action bar below it, and a summary answered on the device">
-<div class="frame-bar"><span class="url">example.org/why-cats-sleep</span></div>
-<div class="mock web">
-<div class="serif web-title">Why cats sleep so much</div>
-<p class="serif web-text">Cats sleep twelve to sixteen hours a day. <span class="selected">Most of it is light sleep: the ears keep turning toward sounds, and the cat can be up and running in under a second.</span> Deep sleep comes in short stretches.</p>
-<div class="aibar"><span>Explain</span><span>Translate</span><span class="on">Summarize</span><span>Fix grammar</span><span>Ask</span><span class="mono key">Alt+Q</span></div>
-<div class="answer"><b>Summary</b><span>Cats sleep 12 to 16 hours a day, mostly lightly, so they can wake almost instantly.</span><small>Answered on this device, offline.</small></div>
-</div>
-</div>
-</article>
+
 </div>
 </main>
 <footer class="wrap site-footer">

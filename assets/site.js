@@ -27,3 +27,20 @@ document.querySelectorAll('[data-copy]').forEach((b) => b.addEventListener('clic
   catch { b.textContent = 'Select and copy'; }
   setTimeout(() => (b.textContent = 'Copy'), 1500);
 }));
+
+// Margin window: Preview / Markdown, and ticked boxes rewrite exactly their own line.
+document.querySelectorAll('.mdmock').forEach((m) => {
+  const show = (view) => {
+    m.querySelectorAll('[data-view]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+    m.querySelectorAll('[data-pane]').forEach((p) => (p.hidden = p.dataset.pane !== view));
+  };
+  m.querySelectorAll('[data-view]').forEach((b) => b.addEventListener('click', () => show(b.dataset.view)));
+  m.querySelectorAll('input[data-line]').forEach((box) => {
+    const line = m.querySelector(`[data-src="${box.dataset.line}"]`);
+    const was = box.checked;
+    box.addEventListener('change', () => {
+      line.textContent = line.textContent.replace(/\[.\]/, box.checked ? '[x]' : '[ ]');
+      line.classList.toggle('changed', box.checked !== was);
+    });
+  });
+});
