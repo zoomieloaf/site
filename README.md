@@ -1,16 +1,32 @@
 # zoomieloaf.com
 
-The ZoomieLoaf studio website: a landing page, the privacy policy and the terms of use.
-Plain HTML and CSS, no build step, no scripts, no cookies.
+The ZoomieLoaf studio website. Plain HTML, CSS and a little JavaScript: no build step, no cookies, no third-party requests.
 
 ## Pages
 
-- `/`: landing page with the product list
-- `/privacy/`: privacy policy for the site and every product
+- `/`: home, with Margin and AI Summarizer
+- `/margin/`: Margin, the Markdown editor for VS Code
+- `/ai-summarizer/`: AI Summarizer, the Chrome extension
+- `/privacy/`: privacy policy for the site and both products (the Chrome Web Store listing links here)
 - `/terms/`: terms of use
-- `404.html`: not-found page
+- `404.html`: not-found page (uses absolute paths, because it's served at any address)
+
+## Assets
+
+- `assets/site.css`: all styles. Values follow the R2 design reference.
+- `assets/theme.js`: applies a saved light/dark choice before the page paints.
+- `assets/site.js`: the header cat's zoom, the theme toggle, and copy buttons.
+
+The site's security headers (`_headers`) allow scripts and styles from the site itself only, so pages use no inline `style` attributes or inline scripts.
+
+## Before launch
+
+- Replace `#add-to-chrome` with AI Summarizer's Chrome Web Store link (on the home and AI Summarizer pages).
+- The Margin links point to `zoomieloaf.margin` on the VS Code Marketplace and Open VSX, and work once it's published.
 
 ## Run locally
+
+Open `index.html` directly, or serve the folder:
 
 ```sh
 npx serve .
@@ -19,10 +35,7 @@ npx serve .
 ## Deploy
 
 Cloudflare Pages, connected to this repo: no build command, output directory `/`.
-`_headers` sets the security headers.
 
 ## Keep the policy true
 
-Before publishing a product that handles data differently (a new extension, a permission, a network call),
-add or update its section in `privacy/index.html` and change the effective date on both legal pages.
-The Chrome Web Store listing's privacy answers must match it.
+Before releasing a product version that handles data differently (a new permission, a network call, a new AI service), update its section in `privacy/index.html` and change the effective date on both legal pages. The store listings' privacy answers must match it.

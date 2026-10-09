@@ -1,64 +1,85 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ZoomieLoaf</title>
-  <meta name="description" content="ZoomieLoaf makes small, calm tools for people who write and code. Mostly loaf. Occasionally zoom.">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <meta property="og:title" content="ZoomieLoaf">
-  <meta property="og:description" content="Small, calm tools for people who write and code. Mostly loaf. Occasionally zoom.">
-  <meta property="og:url" content="https://zoomieloaf.com/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZoomieLoaf: small tools for reading and writing</title>
+<meta name="description" content="ZoomieLoaf makes Margin, a Markdown editor for VS Code, and AI Summarizer, a private AI helper for Chrome. Mostly loaf. Occasionally zoom.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/theme.js"></script>
+<script src="assets/site.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="index.html" aria-label="ZoomieLoaf home">
-        <svg viewBox="0 0 80 56" width="40" height="28" aria-hidden="true">
-          <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M4 30h12M8 38h10M4 46h12"/>
-          <path fill="currentColor" d="M32 26 34 10 44 21ZM56 21 66 10 68 26ZM24 52C24 32 34 20 50 20S76 32 76 52Z"/>
-          <path fill="none" class="eyes" stroke-width="3" stroke-linecap="round" d="M39 37q3.5 3.5 7 0M54 37q3.5 3.5 7 0"/>
-        </svg>
-        ZoomieLoaf
-      </a>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="hero">
-      <h1>Mostly loaf.<br><em>Occasionally zoom.</em></h1>
-      <p>ZoomieLoaf is a one-person studio making small, calm tools for people who write and code.</p>
-    </section>
-
-    <section class="products" aria-labelledby="products-label">
-      <p class="label" id="products-label">Products</p>
-
-      <article class="product">
-        <h2>Margin</h2>
-        <p>Markdown, edited the way you read it. A Notion-style editor for <code>.md</code> files in VS Code, Cursor, Windsurf and VSCodium.</p>
-        <div class="links">
-          <a href="https://marketplace.visualstudio.com/items?itemName=zoomieloaf.margin">VS Code Marketplace</a>
-          <a href="https://open-vsx.org/extension/zoomieloaf/margin">Open VSX</a>
-        </div>
-      </article>
-
-      <article class="product soon">
-        <p>Something for Chrome is warming up. Zooming soon.</p>
-      </article>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <nav aria-label="Footer">
-        <a href="mailto:hello@zoomieloaf.com">hello@zoomieloaf.com</a>
-        <a href="https://github.com/zoomieloaf">GitHub</a>
-        <a href="privacy/index.html">Privacy</a>
-        <a href="terms/index.html">Terms</a>
-      </nav>
-      <p>© 2026 ZoomieLoaf · Individual Entrepreneur Valerii Pozdniakov · Georgia</p>
-    </div>
-  </footer>
+<header class="wrap site-header">
+<div class="brand"><button class="zl-catbtn" type="button" aria-label="Make the loaf zoom">
+<svg class="zl-puff" viewBox="0 0 44 18" aria-hidden="true"><circle cx="11" cy="12" r="5"/><circle cx="22" cy="9" r="6.5"/><circle cx="33" cy="12" r="4.5"/></svg>
+<svg class="zl-cat" viewBox="0 0 34 26" aria-hidden="true">
+<mask id="zl-eyes"><rect x="0" y="0" width="34" height="26" fill="#fff"/><circle cx="23.6" cy="12.8" r="1.35" fill="#000"/><circle cx="27.9" cy="12.8" r="1.35" fill="#000"/></mask>
+<g class="zl-plain"><rect x="1" y="11" width="26" height="14" rx="7"/><circle cx="25.5" cy="13.5" r="7.5"/><path d="M19.6 10 L21 2.2 L25.4 6.4 Z"/><path d="M26.4 6.2 L30.6 2.4 L32 10.2 Z"/></g>
+<g class="zl-eyed" mask="url(#zl-eyes)"><rect x="1" y="11" width="26" height="14" rx="7"/><circle cx="25.5" cy="13.5" r="7.5"/><path d="M19.6 10 L21 2.2 L25.4 6.4 Z"/><path d="M26.4 6.2 L30.6 2.4 L32 10.2 Z"/></g>
+</svg>
+</button><a href="index.html">ZoomieLoaf</a></div>
+<nav class="hnav" aria-label="Main"><a href="margin/index.html">Margin</a><a href="ai-summarizer/index.html">AI Summarizer</a><button class="tgl" type="button" aria-label="Switch between light and dark theme"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 3 A7 7 0 0 1 10 17 Z" fill="currentColor"/></svg></button></nav>
+</header>
+<main>
+<section class="wrap intro"><div>
+<h1>Small tools for reading and writing.</h1>
+<p class="tagline">Mostly loaf. Occasionally zoom.</p>
+</div></section>
+<div class="wrap products">
+<article class="prod" aria-labelledby="p-margin">
+<div class="prod-text">
+<div class="prod-name"><svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg" width="40" height="40" rx="9"/><path class="icon-fg thin" d="M13 9 V31"/><path class="icon-fg bold" d="M17 14 H30 M17 20 H28 M17 26 H24"/></svg><div><h2 id="p-margin"><a href="margin/index.html">Margin</a></h2><div class="kind">Extension for VS Code</div></div></div>
+<p>Opens Markdown files as a clean page you edit in place. The file stays plain Markdown, so ticking a checkbox is a one-line diff.</p>
+<dl class="facts">
+<dt>Works in</dt><dd>VS Code, Cursor, Windsurf, VSCodium</dd>
+<dt>Your files</dt><dd>Plain Markdown. Only edited blocks change.</dd>
+<dt>Price</dt><dd>Free</dd>
+</dl>
+<div class="actions"><a class="btn" href="https://marketplace.visualstudio.com/items?itemName=zoomieloaf.margin">Install for VS Code</a><a class="lnk" href="margin/index.html">About Margin</a></div>
+</div>
+<div class="frame" role="img" aria-label="Margin showing a Markdown file as a rendered page with to-dos and a table">
+<div class="frame-bar"><span class="mono file">launch-plan.md</span><span class="seg"><span class="on">Preview</span><span>Edit</span></span></div>
+<div class="mock">
+<div class="doc-title">Launch plan</div>
+<p class="mut">Everything before the store listings go live. Steps are in <span class="doc-link">Release checklist</span>.</p>
+<div class="doc-h">This week</div>
+<div class="todos">
+<div class="todo done"><span class="box done"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.4"/></svg></span><span>Record the demo</span></div>
+<div class="todo"><span class="box"></span><span>Write the Open VSX description</span></div>
+<div class="todo"><span class="box"></span><span>Proofread the privacy policy</span></div>
+</div>
+<div class="tbl"><span class="th">Store</span><span class="th">Status</span><span>VS Code Marketplace</span><span>Submitted</span><span>Open VSX</span><span>Draft</span></div>
+</div>
+</div>
+</article>
+<article class="prod" aria-labelledby="p-sum">
+<div class="prod-text">
+<div class="prod-name"><svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg" width="40" height="40" rx="9"/><path class="icon-fg bold" d="M10 12 H30 M10 29 H22"/><rect class="icon-fill" x="8" y="17" width="24" height="7" rx="2"/></svg><div><h2 id="p-sum"><a href="ai-summarizer/index.html">AI Summarizer</a></h2><div class="kind">Extension for Chrome</div></div></div>
+<p>Select text on any page to explain, translate, summarize, fix grammar or ask about it. Chat about the page with AI that runs on your device.</p>
+<dl class="facts">
+<dt>Works in</dt><dd>Chrome</dd>
+<dt>Account</dt><dd>None. No sign-up, no API key.</dd>
+<dt>AI</dt><dd>On-device, works offline after a one-time download. Or use your own ChatGPT or Claude login.</dd>
+<dt>Price</dt><dd>Free</dd>
+</dl>
+<div class="actions"><a class="btn" href="#add-to-chrome">Add to Chrome</a><a class="lnk" href="ai-summarizer/index.html">About AI Summarizer</a></div>
+</div>
+<div class="frame" role="img" aria-label="AI Summarizer: text selected on a web page, the action bar below it, and a summary answered on the device">
+<div class="frame-bar"><span class="url">example.org/why-cats-sleep</span></div>
+<div class="mock web">
+<div class="serif web-title">Why cats sleep so much</div>
+<p class="serif web-text">Cats sleep twelve to sixteen hours a day. <span class="selected">Most of it is light sleep: the ears keep turning toward sounds, and the cat can be up and running in under a second.</span> Deep sleep comes in short stretches.</p>
+<div class="aibar"><span>Explain</span><span>Translate</span><span class="on">Summarize</span><span>Fix grammar</span><span>Ask</span><span class="mono key">Alt+Q</span></div>
+<div class="answer"><b>Summary</b><span>Cats sleep 12 to 16 hours a day, mostly lightly, so they can wake almost instantly.</span><small>Answered on this device, offline.</small></div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<footer class="wrap site-footer">
+<div><span>© 2026 ZoomieLoaf</span><nav aria-label="Footer"><a href="mailto:hello@zoomieloaf.com">hello@zoomieloaf.com</a><a href="https://github.com/zoomieloaf">GitHub</a><a href="privacy/index.html">Privacy</a><a href="terms/index.html">Terms</a></nav></div>
+</footer>
 </body>
 </html>

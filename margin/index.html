@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Margin: edit Markdown as a page in VS Code</title>
+<meta name="description" content="Margin opens Markdown files in VS Code, Cursor, Windsurf and VSCodium as a clean page you edit in place. The file stays plain Markdown.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/theme.js"></script>
+<script src="../assets/site.js" defer></script>
+</head>
+<body>
+<header class="wrap site-header">
+<div class="brand"><button class="zl-catbtn" type="button" aria-label="Make the loaf zoom">
+<svg class="zl-puff" viewBox="0 0 44 18" aria-hidden="true"><circle cx="11" cy="12" r="5"/><circle cx="22" cy="9" r="6.5"/><circle cx="33" cy="12" r="4.5"/></svg>
+<svg class="zl-cat" viewBox="0 0 34 26" aria-hidden="true">
+<mask id="zl-eyes"><rect x="0" y="0" width="34" height="26" fill="#fff"/><circle cx="23.6" cy="12.8" r="1.35" fill="#000"/><circle cx="27.9" cy="12.8" r="1.35" fill="#000"/></mask>
+<g class="zl-plain"><rect x="1" y="11" width="26" height="14" rx="7"/><circle cx="25.5" cy="13.5" r="7.5"/><path d="M19.6 10 L21 2.2 L25.4 6.4 Z"/><path d="M26.4 6.2 L30.6 2.4 L32 10.2 Z"/></g>
+<g class="zl-eyed" mask="url(#zl-eyes)"><rect x="1" y="11" width="26" height="14" rx="7"/><circle cx="25.5" cy="13.5" r="7.5"/><path d="M19.6 10 L21 2.2 L25.4 6.4 Z"/><path d="M26.4 6.2 L30.6 2.4 L32 10.2 Z"/></g>
+</svg>
+</button><a href="../index.html">ZoomieLoaf</a></div>
+<nav class="hnav" aria-label="Main"><a href="../margin/index.html" aria-current="page">Margin</a><a href="../ai-summarizer/index.html">AI Summarizer</a><button class="tgl" type="button" aria-label="Switch between light and dark theme"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 3 A7 7 0 0 1 10 17 Z" fill="currentColor"/></svg></button></nav>
+</header>
+<main>
+<section class="wrap phero">
+<div class="prod-name"><svg viewBox="0 0 40 40" aria-hidden="true"><rect class="icon-bg" width="40" height="40" rx="9"/><path class="icon-fg thin" d="M13 9 V31"/><path class="icon-fg bold" d="M17 14 H30 M17 20 H28 M17 26 H24"/></svg><div class="kind">Margin, an extension for VS Code</div></div>
+<h1>Edit Markdown as a page. Commit plain text.</h1>
+<p>Margin opens <code>.md</code> files in VS Code, Cursor, Windsurf and VSCodium as a clean page you edit in place. When you save, only the lines you changed change.</p>
+<div class="actions"><a class="btn" href="https://marketplace.visualstudio.com/items?itemName=zoomieloaf.margin">Install for VS Code</a><span class="cmd"><code>code --install-extension zoomieloaf.margin</code><button type="button" data-copy="code --install-extension zoomieloaf.margin">Copy</button></span></div>
+<p class="small">Cursor, Windsurf or VSCodium? <a href="https://open-vsx.org/extension/zoomieloaf/margin">Get it on Open VSX</a>.</p>
+</section>
+<section class="wrap showcase"><div class="frame" role="img" aria-label="Margin showing a Markdown file as a rendered page with to-dos and a table">
+<div class="frame-bar"><span class="mono file">launch-plan.md</span><span class="seg"><span class="on">Preview</span><span>Edit</span></span></div>
+<div class="mock">
+<div class="doc-title">Launch plan</div>
+<p class="mut">Everything before the store listings go live. Steps are in <span class="doc-link">Release checklist</span>.</p>
+<div class="doc-h">This week</div>
+<div class="todos">
+<div class="todo done"><span class="box done"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2 L5 8.6 L9.6 3.4"/></svg></span><span>Record the demo</span></div>
+<div class="todo"><span class="box"></span><span>Write the Open VSX description</span></div>
+<div class="todo"><span class="box"></span><span>Proofread the privacy policy</span></div>
+</div>
+<div class="tbl"><span class="th">Store</span><span class="th">Status</span><span>VS Code Marketplace</span><span>Submitted</span><span>Open VSX</span><span>Draft</span></div>
+</div>
+</div></section>
+<section class="wrap section">
+<div><h2>What it does</h2><p class="lede">Everything you'd expect from a writing app, inside the editor you already use.</p></div>
+<dl class="feature-list"><div><dt>Edit in place</dt><dd>Press <kbd>Ctrl+E</kbd> or double-click any text. Select text for a menu with headings, lists, quotes, callouts and links.</dd></div><div><dt>Slash menu</dt><dd>Type <kbd>/</kbd> on an empty line for headings, lists, to-dos, tables, code blocks, callouts or a Mermaid diagram.</dd></div><div><dt>Block handles</dt><dd>Drag a block by its handle to move it, or duplicate and delete it from its menu.</dd></div><div><dt>Wiki-style links</dt><dd>A link to another <code>.md</code> file opens it in Margin, scrolled to the heading. Back and Forward work like in VS Code.</dd></div><div><dt>Tables</dt><dd><kbd>Tab</kbd> moves between cells and adds a row at the end. Add or delete rows and columns from the block menu.</dd></div><div><dt>Export</dt><dd>PDF through the Edge or Chrome already on your computer, a single HTML file, or rich text for Slack and email.</dd></div><div><dt>AI actions</dt><dd>Improve, shorten, fix or translate a selection with GitHub Copilot in VS Code, or hand the prompt to a chat.</dd></div></dl>
+</section>
+<section class="wrap section">
+<div><h2>Your Markdown stays yours</h2><p class="lede">Blocks you didn't touch are written back byte for byte: spacing, list markers, emphasis style, line endings. A block you edit is written in the style the file already uses.</p></div>
+<div class="frame">
+<div class="frame-bar"><span class="mono file">git diff launch-plan.md</span></div>
+<div class="diff mono diff-body"><span class="d hunk">@@ -5,3 +5,3 @@ ## This week</span><span class="d"> - [x] Record the demo</span><span class="d del">-- [ ] Write the Open VSX description</span><span class="d add">+- [x] Write the Open VSX description</span><span class="d"> - [ ] Proofread the privacy policy</span></div>
+</div>
+</section>
+<section class="wrap section">
+<div><h2>Getting started</h2></div>
+<ol class="steps">
+<li><span>Install Margin from the <a href="https://marketplace.visualstudio.com/items?itemName=zoomieloaf.margin">VS Code Marketplace</a> or <a href="https://open-vsx.org/extension/zoomieloaf/margin">Open VSX</a>.</span></li>
+<li><span>Open any <code>.md</code> file and click <b>Open in Margin</b> in the editor title bar. When Margin asks, you can make it the default for Markdown.</span></li>
+<li><span>Press <kbd>Ctrl+E</kbd> (<kbd>Cmd+E</kbd> on macOS) to switch between reading and editing. <b>Reopen in Text Editor</b> brings the plain editor back.</span></li>
+</ol>
+</section>
+</main>
+<footer class="wrap site-footer">
+<div><span>© 2026 ZoomieLoaf</span><nav aria-label="Footer"><a href="mailto:hello@zoomieloaf.com">hello@zoomieloaf.com</a><a href="https://github.com/zoomieloaf">GitHub</a><a href="../privacy/index.html">Privacy</a><a href="../terms/index.html">Terms</a></nav></div>
+</footer>
+</body>
+</html>
