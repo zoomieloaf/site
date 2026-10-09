@@ -214,9 +214,8 @@ page('404.html', 'Page not found: ZoomieLoaf', 'This page does not exist.', NOT_
 
 # ---------- Privacy and Terms ----------
 
-WHO = ('ZoomieLoaf is the trading name of Individual Entrepreneur Valerii Pozdniakov '
-       '(identification number ), registered in Georgia ("ZoomieLoaf", "we", "us"). '
-       'Contact: <a href="mailto:hello@zoomieloaf.com">hello@zoomieloaf.com</a>.')
+WHO = ('ZoomieLoaf is the trading name of Individual Entrepreneur Valerii Pozdniakov, Georgia '
+       '("ZoomieLoaf", "we", "us"). Contact: <a href="mailto:hello@zoomieloaf.com">hello@zoomieloaf.com</a>.')
 
 PRIVACY = f'''<article class="wrap legal">
 <h1>Privacy policy</h1>
