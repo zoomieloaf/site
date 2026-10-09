@@ -37,7 +37,7 @@ npx serve public
 
 ## Deploy
 
-Cloudflare Pages, connected to this repo: no build command, build output directory `public`. Every push to `main` publishes the site.
+Cloudflare Workers (static assets), connected to this repo. `wrangler.jsonc` tells it to serve `public/`, use `404.html` for missing pages, and apply `public/_headers`. Deploy command `npx wrangler deploy`, preview command `npx wrangler versions upload`. Every push to `main` publishes the site.
 
 ## Keep the policy true
 
