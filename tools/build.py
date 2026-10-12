@@ -34,11 +34,11 @@ CHECK = '<span class="box done"><svg viewBox="0 0 12 12" aria-hidden="true"><pat
 # The real Margin editor (Margin's own webview build in assets/margin), running on a sample file.
 MOCK_MARGIN = '''<div>
 <div class="frame live"><iframe src="{p}embed/margin.html" title="Margin, running live in a small VS Code window with sample files"></iframe></div>
-<p class="try">This is the real Margin editor. Switch to Edit or Markdown, tick a box, or open another file.</p>
+<p class="try">This is the real Margin editor. Hover a block, select some text, or type / on an empty line.</p>
 </div>'''
 MOCK_MARGIN_BARE = '''<div>
 <div class="frame live"><iframe src="{p}embed/margin.html?bare" title="Margin, running live on a sample file"></iframe></div>
-<p class="try">This is the real Margin editor. Switch to Edit or Markdown, tick a box, type something.</p>
+<p class="try">This is the real Margin editor. Hover a block, select some text, or type / on an empty line.</p>
 </div>'''
 
 MOCK_SUM = '''<div class="frame" role="img" aria-label="AI Summarizer: text selected on a web page, the action bar below it, and a summary answered on the device">
@@ -123,8 +123,6 @@ HOME_SUM = f'''<article class="prod" aria-labelledby="p-sum">
 {MOCK_SUM}
 </article>'''
 HOME = HOME.replace('{HOME_SUM}', HOME_SUM if SHOW_SUM else '')
-page('index.html', 'ZoomieLoaf: small tools for reading and writing',
-     'ZoomieLoaf makes small tools for reading and writing, like Margin, a Markdown editor for VS Code. Mostly loaf. Occasionally zoom.', HOME)
 
 
 # ---------- Margin ----------
@@ -169,6 +167,35 @@ MARGIN = f'''<section class="wrap phero">
 </section>'''
 page('margin/index.html', 'Margin: edit Markdown as a page in VS Code',
      'Notion-style editing for Markdown in VS Code, Cursor, Windsurf and VSCodium. Edit .md files as a clean page; the file stays plain Markdown.', MARGIN, 'margin')
+
+# The home page while Margin is the only product: who makes it, Margin's headline, a wide live demo,
+# then the studio motto as a sign-off. (HOME above is the product-card layout, for more products.)
+LOAF = '<svg viewBox="76 14 180 136" aria-hidden="true"><rect x="80" y="52" width="152" height="96" rx="48"/><ellipse cx="212" cy="76" rx="40" ry="36"/><path d="M186 54 192 20 211 45ZM217 43 238 18 246 56Z"/></svg>'
+LANDING = f'''<section class="wrap lead">
+<p class="studio"><b>ZoomieLoaf</b> makes small tools for reading and writing.</p>
+<h1>Edit Markdown as a page. Commit plain text.</h1>
+<div class="actions"><a class="btn" href="{MARGIN_STORE}">Install for VS Code</a><a class="btn ghost" href="{MARGIN_OVSX}">Install from Open VSX</a></div>
+</section>
+<section class="wrap stage"><div class="frame live"><iframe src="{{p}}embed/margin.html" title="Margin, running live in a small VS Code window with sample files"></iframe></div></section>
+<p class="wrap hints"><span><b>Select</b> words for the menu</span><span><b>Hover</b> a block for its handles</span><span><b>Type /</b> on an empty line</span><span><b>Click</b> a link to open the page</span></p>
+<section class="wrap section">
+<div><h2>Your Markdown stays yours</h2><p class="lede">Margin works on <code>.md</code> files in VS Code, Cursor, Windsurf and VSCodium. Blocks you didn't touch are written back byte for byte.</p></div>
+<div class="frame">
+<div class="frame-bar"><span class="mono file">git diff launch-plan.md</span></div>
+<div class="diff mono diff-body"><span class="d hunk">@@ -5,3 +5,3 @@ ## This week</span><span class="d"> - [x] Record the demo</span><span class="d del">-- [ ] Write the Open VSX description</span><span class="d add">+- [x] Write the Open VSX description</span><span class="d"> - [ ] Proofread the privacy policy</span></div>
+</div>
+</section>
+<section class="wrap section">
+<div><h2>Getting started</h2><p class="lede">Free. Or from the terminal:</p><p style="margin-top:12px"><span class="cmd"><code>{CMD}</code><button type="button" data-copy="{CMD}">Copy</button></span></p></div>
+<ol class="steps">
+<li><span>Install Margin from the <a href="{MARGIN_STORE}">VS Code Marketplace</a> or <a href="{MARGIN_OVSX}">Open VSX</a>.</span></li>
+<li><span>Open any <code>.md</code> file and click <b>Open in Margin</b> in the editor title bar.</span></li>
+<li><span>Press <kbd>Ctrl+E</kbd> (<kbd>Cmd+E</kbd> on macOS) to switch between reading and editing.</span></li>
+</ol>
+</section>
+<section class="wrap sign">{LOAF}<p>Small tools for reading and writing. <span>Mostly loaf. Occasionally zoom.</span></p></section>'''
+page('index.html', 'ZoomieLoaf: small tools for reading and writing',
+     'ZoomieLoaf makes small tools for reading and writing, like Margin, a Markdown editor for VS Code. Mostly loaf. Occasionally zoom.', LANDING)
 
 
 # ---------- AI Summarizer ----------

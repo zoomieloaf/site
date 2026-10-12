@@ -23,29 +23,29 @@
 <nav class="hnav" aria-label="Main"><a href="margin/index.html">Margin</a><button class="tgl" type="button" aria-label="Switch between light and dark theme"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 3 A7 7 0 0 1 10 17 Z" fill="currentColor"/></svg></button></nav>
 </header>
 <main>
-<section class="wrap intro"><div>
-<h1>Small tools for reading and writing.</h1>
-<p class="tagline">Mostly loaf. Occasionally zoom.</p>
-</div></section>
-<div class="wrap products">
-<article class="prod" aria-labelledby="p-margin">
-<div class="prod-text">
-<div class="prod-name"><img class="app-icon" src="assets/margin/icon.png" alt="" width="44" height="44"><div><h2 id="p-margin"><a href="margin/index.html">Margin</a></h2><div class="kind">Extension for VS Code</div></div></div>
-<p>Notion-style editing for your Markdown files. Open a <code>.md</code> file as a clean page and edit it in place, with a slash menu, block handles and drag and drop. The file stays plain Markdown, so ticking a checkbox is a one-line diff.</p>
-<dl class="facts">
-<dt>Works in</dt><dd>VS Code, Cursor, Windsurf, VSCodium</dd>
-<dt>Your files</dt><dd>Plain Markdown. Only edited blocks change.</dd>
-<dt>Price</dt><dd>Free</dd>
-</dl>
-<div class="actions"><a class="btn" href="https://marketplace.visualstudio.com/items?itemName=zoomieloaf.margin">Install for VS Code</a><a class="btn ghost" href="https://open-vsx.org/extension/zoomieloaf/margin">Install from Open VSX</a><a class="lnk" href="margin/index.html">About Margin</a></div>
+<section class="wrap lead">
+<p class="studio"><b>ZoomieLoaf</b> makes small tools for reading and writing.</p>
+<h1>Edit Markdown as a page. Commit plain text.</h1>
+<div class="actions"><a class="btn" href="https://marketplace.visualstudio.com/items?itemName=zoomieloaf.margin">Install for VS Code</a><a class="btn ghost" href="https://open-vsx.org/extension/zoomieloaf/margin">Install from Open VSX</a></div>
+</section>
+<section class="wrap stage"><div class="frame live"><iframe src="embed/margin.html" title="Margin, running live in a small VS Code window with sample files"></iframe></div></section>
+<p class="wrap hints"><span><b>Select</b> words for the menu</span><span><b>Hover</b> a block for its handles</span><span><b>Type /</b> on an empty line</span><span><b>Click</b> a link to open the page</span></p>
+<section class="wrap section">
+<div><h2>Your Markdown stays yours</h2><p class="lede">Margin works on <code>.md</code> files in VS Code, Cursor, Windsurf and VSCodium. Blocks you didn't touch are written back byte for byte.</p></div>
+<div class="frame">
+<div class="frame-bar"><span class="mono file">git diff launch-plan.md</span></div>
+<div class="diff mono diff-body"><span class="d hunk">@@ -5,3 +5,3 @@ ## This week</span><span class="d"> - [x] Record the demo</span><span class="d del">-- [ ] Write the Open VSX description</span><span class="d add">+- [x] Write the Open VSX description</span><span class="d"> - [ ] Proofread the privacy policy</span></div>
 </div>
-<div>
-<div class="frame live"><iframe src="embed/margin.html?bare" title="Margin, running live on a sample file"></iframe></div>
-<p class="try">This is the real Margin editor. Switch to Edit or Markdown, tick a box, type something.</p>
-</div>
-</article>
-
-</div>
+</section>
+<section class="wrap section">
+<div><h2>Getting started</h2><p class="lede">Free. Or from the terminal:</p><p style="margin-top:12px"><span class="cmd"><code>code --install-extension zoomieloaf.margin</code><button type="button" data-copy="code --install-extension zoomieloaf.margin">Copy</button></span></p></div>
+<ol class="steps">
+<li><span>Install Margin from the <a href="https://marketplace.visualstudio.com/items?itemName=zoomieloaf.margin">VS Code Marketplace</a> or <a href="https://open-vsx.org/extension/zoomieloaf/margin">Open VSX</a>.</span></li>
+<li><span>Open any <code>.md</code> file and click <b>Open in Margin</b> in the editor title bar.</span></li>
+<li><span>Press <kbd>Ctrl+E</kbd> (<kbd>Cmd+E</kbd> on macOS) to switch between reading and editing.</span></li>
+</ol>
+</section>
+<section class="wrap sign"><svg viewBox="76 14 180 136" aria-hidden="true"><rect x="80" y="52" width="152" height="96" rx="48"/><ellipse cx="212" cy="76" rx="40" ry="36"/><path d="M186 54 192 20 211 45ZM217 43 238 18 246 56Z"/></svg><p>Small tools for reading and writing. <span>Mostly loaf. Occasionally zoom.</span></p></section>
 </main>
 <footer class="wrap site-footer">
 <div><span>© 2026 ZoomieLoaf</span><nav aria-label="Footer"><a href="mailto:hello@zoomieloaf.com">hello@zoomieloaf.com</a><a href="https://github.com/zoomieloaf">GitHub</a><a href="privacy/index.html">Privacy</a><a href="terms/index.html">Terms</a></nav></div>
